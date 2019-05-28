@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  {% for art in object_list %}
+    <div class="article">
+      <h3><a href="article/{{art.pk}}">{{art.title}}</a></h3>
+      <p> {{art.text}} </p>
+    </div>
+  {% endfor %}
+{% endblock %}
+
+
+<!-- if we want to use that name article_page then we should do following:
+
+
+<a href="{% url 'article_page' art.pk %}"> instead of  <a href="article/{{art.pk}}"> -->
